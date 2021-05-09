@@ -7,7 +7,7 @@ let btn = document.querySelector("#submitBtn");
 let tbodyElement = document.querySelector('tbody');
 
 enderecos = Array.from(endereco);
-pessoas = [];
+pessoas = JSON.parse(localStorage.getItem('pessoas_cadastradas')) || [];
 
 function validar(){
   if (nome.value == ''){
@@ -77,6 +77,7 @@ renderPessoas();
 function excluirPessoa(pos){
   pessoas.splice(pos, 1);
   renderPessoas();
+  saveToStorage();
 }
 
 function cadastrar(){
@@ -100,6 +101,7 @@ function cadastrar(){
   pessoas.push(pessoa);
   console.log(pessoas);
   renderPessoas();
+  saveToStorage();
 }
 
 function limparInputs(){
@@ -112,3 +114,7 @@ function limparInputs(){
 
 
 btn.addEventListener("click", cadastrar);
+
+function saveToStorage(){
+  localStorage.setItem('pessoas_cadastradas',JSON.stringify(pessoas));
+}
