@@ -39,31 +39,45 @@ function renderPessoas(){
     let td3Element = document.createElement('td');
     let td4Element = document.createElement('td');
     let td5Element = document.createElement('td');
+    let td6Element = document.createElement('td');
     let nomePessoa = document.createTextNode(pessoa.nome);
     let emailPessoa = document.createTextNode(pessoa.email);
     let cpf_cnpjPessoa = document.createTextNode(pessoa.cpf_cnpj);
     let telefonePessoa = document.createTextNode(pessoa.telefone);
-    let enderecoPessoa = document.createTextNode(`${pessoa.endereco.logradouro}, ${pessoa.endereco.numero},
-     bairro ${pessoa.endereco.bairro}. ${pessoa.endereco.cidade}/${pessoa.endereco.estado}`); //Rua exemplo, 123, bairro joao maria. Campos/RJ.
+    let enderecoPessoa = document.createTextNode(`${pessoa.endereco.logradouro}, ${pessoa.endereco.numero} -
+     ${pessoa.endereco.bairro} - ${pessoa.endereco.cidade}/${pessoa.endereco.estado}`); //Rua exemplo, 123, bairro . Campos/RJ.
+    let pos = pessoas.indexOf(pessoa);
+    let excluirElement = document.createElement('a');
+    let textElement = document.createTextNode('Excluir');
+    excluirElement.appendChild(textElement);
+    excluirElement.setAttribute('href', '#');
+    excluirElement.setAttribute('onclick', `excluirPessoa(${pos})`);
 
     td1Element.appendChild(nomePessoa);
     td2Element.appendChild(emailPessoa);
     td3Element.appendChild(cpf_cnpjPessoa);
     td4Element.appendChild(telefonePessoa);
     td5Element.appendChild(enderecoPessoa);
-
+    td6Element.appendChild(excluirElement);
+    
     trElement.appendChild(td1Element);
     trElement.appendChild(td2Element);
     trElement.appendChild(td3Element);
     trElement.appendChild(td4Element);
     trElement.appendChild(td5Element);
-
+    trElement.appendChild(td6Element);
+    
     tbodyElement.appendChild(trElement);
     document.querySelector('#table').appendChild(tbodyElement);
   }
 }
 
 renderPessoas();
+
+function excluirPessoa(pos){
+  pessoas.splice(pos, 1);
+  renderPessoas();
+}
 
 function cadastrar(){
   if(!validar()){
