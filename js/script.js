@@ -4,6 +4,7 @@ let cpf_cnpj = document.querySelector("#cpf_cnpj");
 let telefone = document.querySelector("#telefone");
 let endereco = document.querySelectorAll(".endereco");
 let btn = document.querySelector("#submitBtn");
+let tableElement = document.querySelector('.table');
 let tbodyElement = document.querySelector('tbody');
 
 enderecos = Array.from(endereco);
@@ -49,6 +50,7 @@ function renderPessoas(){
     let pos = pessoas.indexOf(pessoa);
     let excluirElement = document.createElement('a');
     let textElement = document.createTextNode('Excluir');
+
     excluirElement.appendChild(textElement);
     excluirElement.setAttribute('href', '#');
     excluirElement.setAttribute('onclick', `excluirPessoa(${pos})`);
@@ -68,7 +70,7 @@ function renderPessoas(){
     trElement.appendChild(td6Element);
     
     tbodyElement.appendChild(trElement);
-    document.querySelector('#table').appendChild(tbodyElement);
+    tableElement.appendChild(tbodyElement);
   }
 }
 
