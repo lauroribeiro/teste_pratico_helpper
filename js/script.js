@@ -1,6 +1,7 @@
 let name = document.querySelector("#nome");
 let email = document.querySelector("#email");
-let cpf = document.querySelector("#cpf");
+let cpf_cnpj = document.querySelector("#cpf_cnpj");
+let telefone = document.querySelector("#telefone");
 let endereco = document.querySelectorAll(".endereco");
 let btn = document.querySelector("#submitBtn");
 let pessoa;
@@ -12,7 +13,7 @@ function cadastrar(){
   let pessoa = {
     nome: nome.value,
     email: email.value,
-    cpf: cpf.value,
+    cpf_cnpj: cpf_cnpj.value,
     endereco: {
       logradouro: endereco_array[0].value,
       numero: endereco_array[1].value,
@@ -28,7 +29,8 @@ function cadastrar(){
 function limparInputs(){
   nome.value = '';
   email.value = '';
-  cpf.value = '';
+  cpf_cnpj.value = '';
+  telefone.value = '';
   endereco_array.forEach((e) => e.value = '');
 }
 

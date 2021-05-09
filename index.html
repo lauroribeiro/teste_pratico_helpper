@@ -10,15 +10,18 @@
     <p>Insira seus dados</p>
     <br>
   </div>
-  <form name="cadastro">
+  <form >
+
     <label for="nome">Nome</label><br>
     <input type="text" name="nome" id="nome" placeholder="Lauro Ribeiro" required>
     <br><br>
     <label for="email">E-mail</label><br>
     <input type="email" name="email" id="email" placeholder="pessoa@exemplo.com" required>
     <br><br>
-    <label for="cpf">CPF ou CPNJ</label><br>
-    <input type="text" name="cpf" id="cpf" required>
+    <label for="cpf_cnpj">CPF ou CPNJ</label><br>
+    <input type="text" name="cpf_cnpj" id="cpf_cnpj" required>
+    <br><br><label for="telefone">Telefone</label><br>
+    <input type="text" name="telefone" id="telefone" required>
     <br><br>
     <label for="logradouro">Logradouro</label><br>
     <input type="text" class="endereco" name="logradouro" id="logradouro" required>
@@ -31,9 +34,9 @@
     <input type="text" class="endereco" name="bairro" id="bairro" required>
     <label for="estado">Estado</label>
     <input type="text" class="endereco" name="estado" id="estado" required>
+    <button id="submitBtn">Cadastrar</button>
     <br><br>
   </form>
-  <button id="submitBtn">Cadastrar</button>
   <script src="js/script.js"> </script>
 </body>
 </html>
