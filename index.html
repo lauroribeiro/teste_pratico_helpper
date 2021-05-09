@@ -28,15 +28,35 @@
     <label for="numero">Número</label>
     <input type="text" class="endereco" name="numero" id="numero" required>
     <br><br>
-    <label for="cidade">Cidade</label>
-    <input type="text" class="endereco" name="cidade" id="cidade" required>
     <label for="bairro">Bairro</label>
     <input type="text" class="endereco" name="bairro" id="bairro" required>
+    <label for="cidade">Cidade</label>
+    <input type="text" class="endereco" name="cidade" id="cidade" required>
     <label for="estado">Estado</label>
     <input type="text" class="endereco" name="estado" id="estado" required>
     <button id="submitBtn">Cadastrar</button>
     <br><br>
   </form>
+  <div id="table">
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th>CPF/CNPJ</th>
+          <th>Telefone</th>
+          <th>Endereço</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="tr1"></tr>
+        <tr id="tr2"></tr>
+        <tr id="tr3"></tr>
+        <tr id="tr4"></tr>
+        <tr id="tr5"></tr>
+      </tbody>
+    </table>
+  </div>
   <script src="js/script.js"> </script>
 </body>
 </html>
