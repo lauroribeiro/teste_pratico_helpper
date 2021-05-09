@@ -4,7 +4,9 @@ let cpf = document.querySelector("#cpf");
 let endereco = document.querySelectorAll(".endereco");
 let btn = document.querySelector("#submitBtn");
 let pessoa;
+
 endereco_array = Array.from(endereco);
+pessoas = [];
 
 function cadastrar(){
   let pessoa = {
@@ -19,8 +21,8 @@ function cadastrar(){
       estado: endereco_array[4].value
     }
   } 
-  // limparInputs();
-  console.log(pessoa);
+  limparInputs();
+  pessoas.push(pessoa);
 }
 
 function limparInputs(){
@@ -31,3 +33,5 @@ function limparInputs(){
 }
 
 btn.addEventListener("click", cadastrar);
+
+console.log(pessoas)
