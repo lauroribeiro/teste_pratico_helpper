@@ -1,14 +1,35 @@
-let name = document.querySelector("#nome");
+let nome = document.querySelector("#nome");
 let email = document.querySelector("#email");
 let cpf_cnpj = document.querySelector("#cpf_cnpj");
 let telefone = document.querySelector("#telefone");
 let endereco = document.querySelectorAll(".endereco");
 let btn = document.querySelector("#submitBtn");
+let tbodyElement = document.querySelector('tbody');
 
-endereco_array = Array.from(endereco);
+enderecos = Array.from(endereco);
 pessoas = [];
 
-let tbodyElement = document.querySelector('tbody');
+function validar(){
+  if (nome.value == ''){
+    return false;
+  }
+  if (email.value == ''){
+    return false;
+  }
+  if (cpf_cnpj.value == ''){
+    return false;
+  }
+  if (telefone.value == ''){
+    return false;
+  }
+  for(endereco of enderecos){
+    if (endereco.value == ''){
+      return false;
+    }
+  }
+  return true;
+}
+
 function renderPessoas(){
   tbodyElement.innerHTML = '';
   for(pessoa of pessoas){
@@ -45,17 +66,20 @@ function renderPessoas(){
 renderPessoas();
 
 function cadastrar(){
+  if(!validar()){
+    return; 
+  }
   let pessoa = {
     nome: nome.value,
     email: email.value,
     cpf_cnpj: cpf_cnpj.value,
     telefone: telefone.value,
     endereco: {
-      logradouro: endereco_array[0].value,
-      numero: endereco_array[1].value,
-      bairro: endereco_array[2].value,
-      cidade: endereco_array[3].value,
-      estado: endereco_array[4].value
+      logradouro: enderecos[0].value,
+      numero: enderecos[1].value,
+      bairro: enderecos[2].value,
+      cidade: enderecos[3].value,
+      estado: enderecos[4].value
     }
   } 
   limparInputs();
@@ -69,7 +93,7 @@ function limparInputs(){
   email.value = '';
   cpf_cnpj.value = '';
   telefone.value = '';
-  endereco_array.forEach((e) => e.value = '');
+  enderecos.forEach((e) => e.value = '');
 }
 
 
