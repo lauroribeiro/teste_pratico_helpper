@@ -10,6 +10,10 @@ let tbodyElement = document.querySelector('tbody');
 enderecos = Array.from(endereco);
 pessoas = JSON.parse(localStorage.getItem('pessoas_cadastradas')) || [];
 
+function validarCPF_CNPJ(cpf){
+  return cpf.match(/([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/);
+}
+
 function validar(){
   if (nome.value == ''){
     return false;
@@ -17,7 +21,9 @@ function validar(){
   if (email.value == ''){
     return false;
   }
-  if (cpf_cnpj.value == ''){
+  if (cpf_cnpj.value == '' || !validarCPF_CNPJ(cpf_cnpj.value)){
+    alert("CPF ou CNPJ inválido!");
+    cpf_cnpj.focus();
     return false;
   }
   if (telefone.value == ''){
