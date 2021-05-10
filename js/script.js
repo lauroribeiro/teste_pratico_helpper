@@ -14,6 +14,10 @@ function validarCPF_CNPJ(cpf){
   return cpf.match(/([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/);
 }
 
+function validarTelefone(telefone){
+  return telefone.match(/^\(?[0-9]{2}\)? ?[0-9]?[0-9]{4}-?[0-9]{4}$/);
+}
+
 function validar(){
   if (nome.value == ''){
     return false;
@@ -26,7 +30,9 @@ function validar(){
     cpf_cnpj.focus();
     return false;
   }
-  if (telefone.value == ''){
+  if (telefone.value == '' || !validarTelefone(telefone.value)){
+    alert("Telefone inválido!");
+    telefone.focus();
     return false;
   }
   for(endereco of enderecos){
