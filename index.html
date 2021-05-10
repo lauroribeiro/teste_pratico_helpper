@@ -8,37 +8,58 @@
 </head>
 <body>
   <div class="container">
-    <div>
+    <div class="text-left mb-3">
       <h1>Cadastro de Clientes</h1>
-      <p>Insira seus dados</p>
-      <br>
     </div>
     <form action="#" method="POST">
-      <label for="nome">Nome</label><br>
-      <input type="text" name="nome" id="nome" placeholder="Lauro Ribeiro" required>
-      <br><br>
-      <label for="email">E-mail</label><br>
-      <input type="email" name="email" id="email" placeholder="pessoa@exemplo.com" required>
-      <br><br>
-      <label for="cpf_cnpj">CPF ou CPNJ</label><br>
-      <input type="text" name="cpf_cnpj" id="cpf_cnpj" required>
-      <br><br><label for="telefone">Telefone</label><br>
-      <input type="text" name="telefone" id="telefone" required>
-      <br><br>
-      <label for="logradouro">Logradouro</label><br>
-      <input type="text" class="endereco" name="logradouro" id="logradouro" required>
-      <label for="numero">Número</label>
-      <input type="text" class="endereco" name="numero" id="numero" required>
-      <br><br>
-      <label for="bairro">Bairro</label>
-      <input type="text" class="endereco" name="bairro" id="bairro" required>
-      <label for="cidade">Cidade</label>
-      <input type="text" class="endereco" name="cidade" id="cidade" required>
-      <label for="estado">Estado</label>
-      <input type="text" class="endereco" name="estado" id="estado" required>
-      <button id="submitBtn">Cadastrar</button>
+      <div class="row">
+        <div class="col">
+          <label for="nome" class="form-label">Nome:</label>
+          <input type="text" class="form-control" name="nome" id="nome" placeholder="Lauro Ribeiro" required>
+        </div>
+        <div class="col">
+          <label for="email" class="form-label">E-mail:</label>
+          <input type="email" class="form-control" name="email" id="email" placeholder="pessoa@exemplo.com" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="cpf_cnpj" class="form-label">CPF ou CPNJ:</label>
+          <input type="text" class="form-control" name="cpf_cnpj" id="cpf_cnpj" placeholder="XXX.XXX.XXX-XX ou XX.XXX.XXX/0001-XX" required>
+        </div>
+        <div class="col">
+          <label for="telefone" class="form-label">Telefone:</label>
+          <input type="text" class="form-control" name="telefone" id="telefone" placeholder="(XX) X XXXX-XXXX" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="logradouro" class="form-label">Logradouro:</label><br>
+          <input type="text" class="endereco form-control" name="logradouro" placeholder="Rua exemplo" id="logradouro" required>
+        </div>
+        <div class="col-1">
+          <label for="numero" class="form-label">Número:</label>
+          <input type="text" class="endereco form-control" name="numero" placeholder="000" id="numero" required>
+        </div>
+        <div class="col-2">
+          <label for="bairro" class="form-label">Bairro:</label>
+          <input type="text" class="endereco form-control" name="bairro" id="bairro" placeholder="Botafogo" required>
+        </div>
+        <div class="col-2">
+          <label for="cidade" class="form-label">Cidade:</label>
+          <input type="text" class="endereco form-control" name="cidade" id="cidade" placeholder="Rio de Janeiro" required>
+        </div>
+        <div class="col-1">
+          <label for="estado" class="form-label">UF</label>
+          <input type="text" class="endereco form-control " name="estado" id="estado" placeholder="RJ" required>
+        </div>
+      </div>
+      <div class="mt-5">
+        <button id="submitBtn" class="btn btn-primary col-1 ">Cadastrar</button>
+      </div>
       <br><br>
     </form>
+    <h1 class="mb-3">Listagem de clientes</h1>
     <table class="table table-striped table-hover">
       <thead>
         <tr>
