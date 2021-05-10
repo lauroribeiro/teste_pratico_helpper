@@ -2,18 +2,18 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
   <title>Cadastro</title>
 </head>
 <body>
   <div class="container">
-
     <div>
       <h1>Cadastro de Clientes</h1>
       <p>Insira seus dados</p>
       <br>
     </div>
-    <form >
+    <form action="#" method="POST">
       <label for="nome">Nome</label><br>
       <input type="text" name="nome" id="nome" placeholder="Lauro Ribeiro" required>
       <br><br>
@@ -47,12 +47,18 @@
           <th>CPF/CNPJ</th>
           <th>Telefone</th>
           <th>Endereço</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
       </tbody>
     </table>
   </div>
+  <footer class="footer py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      Desenvolvido por Lauro Ribeiro
+    </div>
+  </footer>
   <script src="js/script.js"> </script>
 </body>
 </html>
