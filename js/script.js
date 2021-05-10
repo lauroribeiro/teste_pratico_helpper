@@ -1,9 +1,9 @@
-let nome = document.querySelector("#nome");
-let email = document.querySelector("#email");
-let cpf_cnpj = document.querySelector("#cpf_cnpj");
-let telefone = document.querySelector("#telefone");
-let endereco = document.querySelectorAll(".endereco");
-let btn = document.querySelector("#submitBtn");
+let nome = document.querySelector('#nome');
+let email = document.querySelector('#email');
+let cpf_cnpj = document.querySelector('#cpf_cnpj');
+let telefone = document.querySelector('#telefone');
+let endereco = document.querySelectorAll('.endereco');
+let btn = document.querySelector('#submitBtn');
 let tableElement = document.querySelector('.table');
 let tbodyElement = document.querySelector('tbody');
 
@@ -115,7 +115,7 @@ function limparInputs(){
 }
 
 
-btn.addEventListener("click", cadastrar);
+btn.addEventListener('click', cadastrar);
 
 function saveToStorage(){
   localStorage.setItem('pessoas_cadastradas',JSON.stringify(pessoas));
