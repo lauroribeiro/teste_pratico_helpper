@@ -1,0 +1,16 @@
+body{
+  display: flex;
+}
+#divcadastro{
+  margin-top: 5rem;
+}
+.footer .container{
+  color: #aeea0a;
+}
+.verde{
+  color: #aeea0a;
+}
+h3{
+  text-align: center;
+  align-items: center;
+}

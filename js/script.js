@@ -48,11 +48,11 @@ function renderPessoas(){
     let enderecoPessoa = document.createTextNode(`${pessoa.endereco.logradouro}, ${pessoa.endereco.numero} -
      ${pessoa.endereco.bairro} - ${pessoa.endereco.cidade}/${pessoa.endereco.estado}`); //Rua exemplo, 123, bairro . Campos/RJ.
     let pos = pessoas.indexOf(pessoa);
-    let excluirElement = document.createElement('a');
+    let excluirElement = document.createElement('button');
     let textElement = document.createTextNode('Excluir');
 
     excluirElement.appendChild(textElement);
-    excluirElement.setAttribute('href', '#');
+    excluirElement.setAttribute('class', 'btn btn-outline-danger');
     excluirElement.setAttribute('onclick', `excluirPessoa(${pos})`);
 
     td1Element.appendChild(nomePessoa);
